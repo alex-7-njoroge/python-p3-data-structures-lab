@@ -42,7 +42,7 @@ class TestDataStructures:
         captured_out = io.StringIO()
         sys.stdout = captured_out
         print_spicy_foods(TestDataStructures.SPICY_FOODS)
-        sys.stdout = sys.__stdout__
+        sys.stdout = sys._stdout_
         assert(captured_out.getvalue() == "Green Curry (Thai) | Heat Level: 🌶🌶🌶🌶🌶🌶🌶🌶🌶\n" +
             "Buffalo Wings (American) | Heat Level: 🌶🌶🌶\n" +
             "Mapo Tofu (Sichuan) | Heat Level: 🌶🌶🌶🌶🌶🌶\n")
@@ -60,7 +60,7 @@ class TestDataStructures:
         captured_out = io.StringIO()
         sys.stdout = captured_out
         print_spiciest_foods(TestDataStructures.SPICY_FOODS)
-        sys.stdout = sys.__stdout__
+        sys.stdout = sys._stdout_
         assert(captured_out.getvalue() == "Green Curry (Thai) | Heat Level: 🌶🌶🌶🌶🌶🌶🌶🌶🌶\n" +
             "Mapo Tofu (Sichuan) | Heat Level: 🌶🌶🌶🌶🌶🌶\n")
 
@@ -101,4 +101,3 @@ class TestDataStructures:
                 "heat_level": 10,
             },
         ]
-
